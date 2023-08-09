@@ -3,6 +3,25 @@
 #include <locale>
 #include <sstream>  //string stream
 #include <vector>
+#include <algorithm>
+#include "EX1.h"
+#include "EX2.h"
+
+//STL
+//
+//Container
+//	Vector(벡터)
+//		-배열의 크기(size)와 원소들의 집합(pointer)
+//		-원소들의 시퀀스는 0 ~ size-1 인덱스로 접근
+//		첨자연산자[]
+//
+//Iterator
+//	포인터 오브젝트
+//	컨테이너 내부에 선언되어 있음
+// [begin, end)
+//
+//Algorithm
+
 
 //int main()
 //{
@@ -189,3 +208,123 @@
 //	}	
 //	std::cout << count << std::endl;
 //}
+
+//int main()
+//{
+//	std::vector<int> v {1, 2, 3, 4, 5};
+//
+//	std::vector<int>::iterator itr;
+//
+//	itr = v.begin();
+//	std::cout << *itr << std::endl;
+//
+//	itr++;
+//	std::cout << *itr << std::endl;
+//
+//	// traverse
+//	itr = v.begin();
+//	while (itr != v.end())
+//	{
+//		std::cout << *itr << std::endl;
+//		itr++;
+//	} 
+//
+//	//	for (std::vector<int>::iterator itr = v.begin(); itr != v.end(); itr++)
+//	for (auto itr = v.begin(); itr != v.end(); itr++)   //auto = 컴파일러가 추론할 수 있는 타입을 생략, auto는 사용자가 확실히 어떤타입인지 알아야함
+//	{
+//		std::cout << *itr << std::_Unlock_shared_ptr_spin_lock;
+//	}
+//	// ㄴ == ㄱ  rangebased llop
+//	for (int e : v)
+//	{
+//		std::cout << e << std::endl;
+//	}
+//
+//	std::vector<int>::iterator itr2 = v.begin();
+//	itr2.		// iterator 인스턴스의 멤버 변수/함수 접근
+//	itr2->		// (*itr2).
+//}
+
+//int main()
+//{
+//	class Student
+//	{
+//	public:
+//		int mNumber;
+//	};
+//
+//	std::vector<Student> students {{ 1 }, { 2 }, { 3 } };
+//
+//	std::vector<Student>::iterator itr = students.begin();
+//		
+//	itr->mNumber = 0;
+//
+//}
+
+//int main()
+//{
+//	std::vector<int> numbers {5, 2, 3, 1, 4};
+
+	//min
+	//int x = 5, y = 3;
+	//std::cout << std::min(x, y) << std::endl;
+	//std::cout << std::min({ 1,2,3,4,5 }) << std::endl;
+
+	//min_element
+	/*std::vector<int>::iterator result = std::min_element(numbers.begin(), numbers.end());
+	std::cout << *result << std::endl;*/
+
+	//swap
+	//std::vector<int> numbers2 {0, 0, 0, 0, 0, 0, 0 };
+	//std::swap(numbers, numbers2);
+
+	//for (const auto& e : numbers)
+	//{
+	//	std::cout << e << ", ";
+	//}std::cout << std::endl;
+
+	//for (const auto& e : numbers2)
+	//{
+	//	std::cout << e << ", ";
+	//}std::cout << std::endl;
+
+	// Function + Object => Functor
+
+
+
+
+//	struct CompareObject
+//	{
+//		bool operator() (int x, int y)
+//		{
+//			return x > y;
+//		}
+//	};
+//
+//	CompareObject c;
+//
+//	std::sort(numbers.begin(), numbers.end()); // 오름차순
+//	std::cout << numbers << std::endl;
+//
+//	std::sort(numbers.begin(), numbers.end(),c);					// functor
+//	std::cout << numbers << std::endl;
+//
+//	std::sort(numbers.begin(), numbers.end(), Compare);				// function
+//	std::cout << numbers << std::endl;
+//
+//	std::sort(numbers.begin(), numbers.end(), std::less<int>());	// predicate
+//	std::cout << numbers << std::endl;
+//
+//	std::sort(numbers.begin(), numbers.end(), std::greater<int>()); // predicate
+//	std::cout << numbers << std::endl;
+//
+//	std::sort(numbers.begin(), numbers.end(), [](int x, int y) {return x > y;} ); // lambda expression
+//	std::cout << numbers << std::endl;
+//
+//}
+
+int main()
+{
+	Ex2();
+
+}
