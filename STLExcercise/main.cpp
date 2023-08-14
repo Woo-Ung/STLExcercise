@@ -264,35 +264,35 @@
 //int main()
 //{
 //	std::vector<int> numbers {5, 2, 3, 1, 4};
-
-	//min
-	//int x = 5, y = 3;
-	//std::cout << std::min(x, y) << std::endl;
-	//std::cout << std::min({ 1,2,3,4,5 }) << std::endl;
-
-	//min_element
-	/*std::vector<int>::iterator result = std::min_element(numbers.begin(), numbers.end());
-	std::cout << *result << std::endl;*/
-
-	//swap
-	//std::vector<int> numbers2 {0, 0, 0, 0, 0, 0, 0 };
-	//std::swap(numbers, numbers2);
-
-	//for (const auto& e : numbers)
-	//{
-	//	std::cout << e << ", ";
-	//}std::cout << std::endl;
-
-	//for (const auto& e : numbers2)
-	//{
-	//	std::cout << e << ", ";
-	//}std::cout << std::endl;
-
-	// Function + Object => Functor
-
-
-
-
+//
+//	min
+//	int x = 5, y = 3;
+//	std::cout << std::min(x, y) << std::endl;
+//	std::cout << std::min({ 1,2,3,4,5 }) << std::endl;
+//
+//	min_element
+//	/*std::vector<int>::iterator result = std::min_element(numbers.begin(), numbers.end());
+//	std::cout << *result << std::endl;*/
+//
+//	swap
+//	std::vector<int> numbers2 {0, 0, 0, 0, 0, 0, 0 };
+//	std::swap(numbers, numbers2);
+//
+//	for (const auto& e : numbers)
+//	{
+//		std::cout << e << ", ";
+//	}std::cout << std::endl;
+//
+//	for (const auto& e : numbers2)
+//	{
+//		std::cout << e << ", ";
+//	}std::cout << std::endl;
+//
+//	 Function + Object => Functor
+//
+//
+//
+//
 //	struct CompareObject
 //	{
 //		bool operator() (int x, int y)
@@ -303,28 +303,102 @@
 //
 //	CompareObject c;
 //
-//	std::sort(numbers.begin(), numbers.end()); // 오름차순
-//	std::cout << numbers << std::endl;
+//	//std::sort(numbers.begin(), numbers.end()); // 오름차순
+//	//std::cout << numbers << std::endl;
 //
-//	std::sort(numbers.begin(), numbers.end(),c);					// functor
-//	std::cout << numbers << std::endl;
+//	//std::sort(numbers.begin(), numbers.end(),c);					// functor
+//	//std::cout << numbers << std::endl;
 //
-//	std::sort(numbers.begin(), numbers.end(), Compare);				// function
-//	std::cout << numbers << std::endl;
+//	//std::sort(numbers.begin(), numbers.end(), Compare);				// function
+//	//std::cout << numbers << std::endl;
 //
-//	std::sort(numbers.begin(), numbers.end(), std::less<int>());	// predicate
-//	std::cout << numbers << std::endl;
+//	//std::sort(numbers.begin(), numbers.end(), std::less<int>());	// predicate
+//	//std::cout << numbers << std::endl;
 //
-//	std::sort(numbers.begin(), numbers.end(), std::greater<int>()); // predicate
-//	std::cout << numbers << std::endl;
+//	//std::sort(numbers.begin(), numbers.end(), std::greater<int>()); // predicate
+//	//std::cout << numbers << std::endl;
 //
-//	std::sort(numbers.begin(), numbers.end(), [](int x, int y) {return x > y;} ); // lambda expression
-//	std::cout << numbers << std::endl;
+//	//std::sort(numbers.begin(), numbers.end(), [](int x, int y) {return x > y;} ); // lambda expression
+//	//std::cout << numbers << std::endl;
+//
+//	std::sort(numbers.begin(), numbers.end(), [](int x, int y) -> bool {
+//		return x > y;
+//		});
+//
+//	std::cout << numbers << std::endl;	// 오름차순
+//
+//	//인덱스
+//	for (int i = 0; i < numbers.size(); ++i)
+//	{
+//		std::cout << numbers[i] << std::endl;
+//	}
+//
+//	// 이터레이터
+//	for (std::vector<int>::iterator it = numbers.begin(); it != numbers.end(); it++)
+//	{
+//		std::cout << numbers[i] << std::endl;
+//	}
+//
+//	// for_each
+//	std::for_each(numbers.begin(), numbers.end(), [](const int& val)
+//		{
+//			std::cout << val << std::endl;
+//		});
+//
+//	// range-based
+//	for (const auto& e : numbers)
+//	{
+//		std::cout << e << std::endl;
+//	}
+//}
+
+//int main()
+//{
+//	Ex2();
 //
 //}
 
-int main()
-{
-	Ex2();
 
-}
+시퀀스 컨테이너(sequence Container)
+	원소들이 순서대로 나열
+	std::array		
+		Random Access []
+		Fixed Size
+
+	std::vector
+		Random Access []
+		Dynamic Size
+
+	std::forward_list	//싱글 링크드 리스트
+		Sequential Access // Random Access 아님
+
+	std::list			//더블 링크드 리스트
+		Double Linked List
+
+	std::deque		// Double ended QUEue (데크)
+		Ramdon Access
+
+
+연관 컨테이너(Associative Container)
+	원소들이 앞뒤, 상하, 좌우 어디로든 연관성에 따라 연결 되어 있는 방식
+	Binary Search Tree( BST ) //이진 탐색 트리
+	Hash
+	std::set
+		고유한 값들이 정렬
+		key 값
+		std::unordered_set
+
+	std::map
+		key <- value
+		Dictionary
+		
+	std::multiset
+		동일한 키가 여러개
+
+	std::multimap
+
+컨테이너 어댑터(container Adapter)
+	특수한 목적에 맞게 변형
+	std::stack
+	std::queue
+	std::proiority_queue
