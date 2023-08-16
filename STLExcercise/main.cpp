@@ -6,7 +6,7 @@
 #include <algorithm>
 #include "EX1.h"
 #include "EX2.h"
-
+#include "EX3.h"
 //STL
 //
 //Container
@@ -359,46 +359,51 @@
 //}
 
 
-시퀀스 컨테이너(sequence Container)
-	원소들이 순서대로 나열
-	std::array		
-		Random Access []
-		Fixed Size
+//시퀀스 컨테이너(sequence Container)
+//	원소들이 순서대로 나열
+//	std::array		
+//		Random Access []
+//		Fixed Size
+//
+//	std::vector
+//		Random Access []
+//		Dynamic Size
+//
+//	std::forward_list	//싱글 링크드 리스트
+//		Sequential Access // Random Access 아님
+//
+//	std::list			//더블 링크드 리스트
+//		Double Linked List
+//
+//	std::deque		// Double ended QUEue (데크)
+//		Ramdon Access
+//
+//
+//연관 컨테이너(Associative Container)
+//	원소들이 앞뒤, 상하, 좌우 어디로든 연관성에 따라 연결 되어 있는 방식
+//	Binary Search Tree( BST ) //이진 탐색 트리
+//	Hash
+//	std::set
+//		고유한 값들이 정렬
+//		key 값
+//		std::unordered_set
+//
+//	std::map
+//		key <- value
+//		Dictionary
+//		
+//	std::multiset
+//		동일한 키가 여러개
+//
+//	std::multimap
+//
+//컨테이너 어댑터(container Adapter)
+//	특수한 목적에 맞게 변형
+//	std::stack
+//	std::queue
+//	std::proiority_queue
 
-	std::vector
-		Random Access []
-		Dynamic Size
-
-	std::forward_list	//싱글 링크드 리스트
-		Sequential Access // Random Access 아님
-
-	std::list			//더블 링크드 리스트
-		Double Linked List
-
-	std::deque		// Double ended QUEue (데크)
-		Ramdon Access
-
-
-연관 컨테이너(Associative Container)
-	원소들이 앞뒤, 상하, 좌우 어디로든 연관성에 따라 연결 되어 있는 방식
-	Binary Search Tree( BST ) //이진 탐색 트리
-	Hash
-	std::set
-		고유한 값들이 정렬
-		key 값
-		std::unordered_set
-
-	std::map
-		key <- value
-		Dictionary
-		
-	std::multiset
-		동일한 키가 여러개
-
-	std::multimap
-
-컨테이너 어댑터(container Adapter)
-	특수한 목적에 맞게 변형
-	std::stack
-	std::queue
-	std::proiority_queue
+int main()
+{
+	Ex3();
+}
