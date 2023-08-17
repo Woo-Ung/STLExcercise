@@ -7,6 +7,8 @@
 #include "EX1.h"
 #include "EX2.h"
 #include "EX3.h"
+#include "EX4.h"
+
 //STL
 //
 //Container
@@ -403,7 +405,24 @@
 //	std::queue
 //	std::proiority_queue
 
+
+//
+//std::vector		//**애매할 때 주로 벡터사용**
+//	배열 접근
+//	데이터가 적은 경우
+//	
+//
+//std::list
+//	중간에서 삭제가 잦은 경우
+//	데이터가 적은 경우
+//
+//std::map
+//	검색이 필요할 때
+//	데이터가 많은 경우 
+
+
+
 int main()
 {
-	Ex3();
+	Ex4();
 }

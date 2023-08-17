@@ -11,6 +11,7 @@
 #include <set>
 #include <unordered_set>
 #include <map>
+#include <bitset>
 
 
 void ArrayEx()
@@ -213,14 +214,30 @@ void MapEx()
 
 	myMap["-"] = "빼기 연산자입니다.";
 
-	struct Student
+	//std::pair<int, int> pt1;
+	
+	//pt1.first = 1;
+	//pt1.second = 1;
+	
+	//pt1 = { 2,2 };
+	
+	//pt1 = std::make_pair<int, int>(3, 3);
+	
+	//std::tuple<int, int, std::string> st1;
+	
+	//st1 = { 1,100,"kitty" };
+	//st1 = std::make_tuple<int, int, std::string>(2, 50, "Doggy");
+	
+	//std::cout << std::get<0>(st1) << std::endl;
+
+	struct Person
 	{
 		int number;
 		int score;
 		std::string name;
 	};
 
-	std::map<int, Student> students
+	std::map<int, Person> students
 	{
 		{1,{1,100,"Doggy"}},
 		{2,{2,50,"Kitty"}},
@@ -228,14 +245,25 @@ void MapEx()
 		{4,{4,30,"Bunny"}}
 	};
 
-	students.insert(std::make_pair<int, Student>(5, { 5,80,"Mansu" }));
+	students.insert(std::make_pair<int, Person>(5, { 5,80,"Mansu" }));
 
-	Student temp{ 6,70,"MS" };
-	auto e = std::make_pair<int, Student>(temp.number, temp);
+	Person temp{ 6,70,"PMS" };
+
+	students.insert(std::pair<int, Person>(temp.number, temp));
 
 	for (auto student : students)
 	{
 		std::cout << student.second.number << " : " << student.second.name << ", " << student.second.score << std::endl;
+	}
+
+	std::multimap<int, int> mm;
+	mm.insert({ 1,40 });
+	mm.insert({ 2,30 });
+	mm.insert({ 1,50 });
+
+	for (auto e : mm)
+	{
+		std::cout << e.first << " : " << e.second << std::endl;
 	}
 }
 
@@ -249,21 +277,12 @@ void Ex3()
 	//DequeEx();
 	//StackAndQueue();
 	//SetEx();
-	MapEx();
+	//MapEx();
 
-	//std::pair<int, int> pt1;
+	std::bitset<8> flag;
 
-	//pt1.first = 1;
-	//pt1.second = 1;
+	flag.set(0,true);
+	flag[2] = true;
 
-	//pt1 = { 2,2 };
-
-	//pt1 = std::make_pair<int, int>(3, 3);
-
-	//std::tuple<int, int, std::string> st1;
-
-	//st1 = { 1,100,"kitty" };
-	//st1 = std::make_tuple<int, int, std::string>(2, 50, "Doggy");
-
-	//std::cout << std::get<0>(st1) << std::endl;
+	std::cout << flag << std::endl;
 }

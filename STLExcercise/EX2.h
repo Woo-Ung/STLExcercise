@@ -3,14 +3,14 @@
 #include <algorithm>
 #include <vector>
 
-struct Student
+struct Student1
 {
 	int mNumber;
 	int mScore;
 	std::string mName;
 };
 
-std::ostream& operator << (std::ostream& os, const std::vector<Student>& students)
+std::ostream& operator << (std::ostream& os, const std::vector<Student1>& students)
 {
 	for (const auto& e : students)
 	{
@@ -19,19 +19,19 @@ std::ostream& operator << (std::ostream& os, const std::vector<Student>& student
 	return os;
 }
 
-bool GreaterCompare(Student x, Student y)
+bool GreaterCompare(Student1 x, Student1 y)
 {
 	return x.mScore > y.mScore;
 }
 
-bool LessCompare(Student x, Student y)
+bool LessCompare(Student1 x, Student1 y)
 {
 	return x.mScore < y.mScore;
 }
 
 void Ex2()
 {
-	std::vector<Student> students
+	std::vector<Student1> students
 	{	
 		{ 1, 100, "Doggy" },
 		{ 2, 50, "kitty" },
