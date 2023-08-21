@@ -4,10 +4,13 @@
 #include <sstream>  //string stream
 #include <vector>
 #include <algorithm>
-#include "EX1.h"
-#include "EX2.h"
-#include "EX3.h"
-#include "EX4.h"
+//#include "Ex1.h"
+//#include "Ex2.h"
+//#include "Ex3.h"
+//#include "Ex4.h"
+#include "STL_T.h"
+#include <map>
+
 
 //STL
 //
@@ -412,7 +415,7 @@
 //	데이터가 적은 경우
 //	
 //
-//std::list
+//std::list		(느림)
 //	중간에서 삭제가 잦은 경우
 //	데이터가 적은 경우
 //
@@ -420,9 +423,67 @@
 //	검색이 필요할 때
 //	데이터가 많은 경우 
 
+//STL 구성
+//	컨테이너
+//		원소 관리
+//	이터레이터
+//		위치
+//	알고리즘
+//		연산
+// 
+// 
+// 
+//	특정 동적 배열 크기
+//		검색 0(n)
+//		배열 사이즈 조절 0(n)
+//			복사 0(n)
+//		0(n+n^2) = 0(n^2)
+// 
+//	erase(remove_if : 알고리즘) 컨테이너  
+//		remove : 0(n)
+//		erase : 0(n)
+//		0(2n) = 0(n)
+// 
+//
 
+bool IsSameImage(std::string s, std::string t)
+{
+	std::sort(s.begin(), s.end());
+	std::sort(t.begin(), t.end());
+
+	return s == t;
+}
+
+char MaxLetter(const std::string& s)
+{
+	std::map<char, int> table;
+	char maxChar{};
+	int max{ -1 };
+
+	for (const auto& e : s)
+	{
+		table[e]++;
+
+		if (table[e] > max)
+		{
+			maxChar = e;
+			max = table[e];
+		}
+	}
+
+	return maxChar;
+}
 
 int main()
 {
-	Ex4();
+	//Ex4_Map();
+	/*STL_T();*/
+
+	std::string s = "acdfc1";
+	std::string t = "dca1cf";
+	std::cout << std::boolalpha << IsSameImage(s, t) << std::endl;
+
+	std::cout << MaxLetter("hhhheeeeeeelllllllllooooo");
+
+	return 0;
 }

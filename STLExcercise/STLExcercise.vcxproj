@@ -134,6 +134,7 @@
     <ClInclude Include="EX2.h" />
     <ClInclude Include="Ex3.h" />
     <ClInclude Include="Ex4.h" />
+    <ClInclude Include="STL_T.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
